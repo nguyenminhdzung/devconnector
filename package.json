@@ -1,0 +1,39 @@
+{
+  "name": "devconnector",
+  "version": "1.0.0",
+  "main": "server.mjs",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node --experimental-modules server.mjs",
+    "server": "nodemon --experimental-modules server.mjs",
+    "test": "jest",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Giang Hoang",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "axios-observable": "^1.0.7",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9"
+  }
+}
